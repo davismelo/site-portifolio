@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Davi Melo - Portifólio | FrontEnd</title>
+  <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon">
+  <meta name="description" content="Portifólio desenvolvedor front-end Davi Melo." />
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- header -->
+    <header class="display-flex">
+
+      <!-- desktop menu -->
+      <nav class="display-flex displayNone">
+        <a href="#home" class="nav-item">Home</a>
+        <a href="#about-me" class="nav-item">Sobre mim</a>
+        <a href="#skills-area" class="nav-item">Habilidades</a>
+        <a href="#project-area" class="nav-item">Projetos</a>
+        <a href="#contact-area" class="nav-item">Contato</a>
+      </nav>
+
+      <!-- mobile menu -->
+      <div class="mobile-menu display-none">
+        <input type="checkbox" name="" id="checkbox-mobile">
+         <span></span>
+         <span></span>
+         <span></span>
+      </div>
+    </header>
+    <main>
+
+    <!-- home -->
+    <section class="home display-flex flex-column" id="home">
+        <div class="top display-flex">
+          <div class="left-side">
+            <p>Olá, me chamo</p>
+            <h1 id="my-name">Davi Melo</h1>
+            <p>Desenvolvedor Front-End</p>
+          </div>
+          <div class="right-side">
+            <a href="/assets/curriculo.pdf" download="curriculo_davi_melo.pdf" type="application/pdf" id="download-btn" class="cursor-pointer">
+              Baixar Currículo
+  </a>  
+          </div>
+        </div>
+       <div class="bottom">
+        <a href="#about-me">
+          <img src="./assets/arrow.svg" alt="arrow" id="arrow-down" class="cursor-pointer">
+        </a>
+       </div>
+       
+    </section>
+
+    <!-- about me -->
+    <section class="about-me" id="about-me">
+        <h2 class="title-main">Sobre mim</h2>
+        <div class="aboutme-text display-flex">
+          <div class="text-left text-center">
+            <p>
+              Sou um jovem do estado de Sergipe que sempre viu a área da programação
+              com bons olhos e depois de conhecer um pouco mais a fundo
+              descobri ser realmente o que eu buscava para trabalhar.
+            </p>
+              </br>
+            <p>
+              Atualmente os meus estudos estão focados na área do front-end,
+              porém tenho interesse de aprender sobre as outras áreas
+              (back-end e mobile). 
+            </p>
+            <br/>
+            <b>Always Learning ☕</b> 
+          </div>
+          <div class="text-right display-flex flex-column">
+            <ul class="info-list">
+              <li>
+                <b>Nome completo:</b>
+                <p> Luiz Davi dos Santos Melo</p>
+              </li>
+              <li>
+                <b>Email:</b>
+                <p>
+                  <a href="mailto:davimeloz101@gmail.com">davimeloz101@gmail.com</a>
+                </p>
+              </li>
+              <li>
+                <b>Nascimento:</b>
+                <p>20/01/2006</p>
+              </li>
+            </ul>
+            <div class="social-list">
+              <a href="https://github.com/davismelo" target="_blank" title="GitHub">
+                <img src="./assets/github-logo.png" alt="github-logo" class="social-items">
+              </a>
+              <a href="https://www.linkedin.com/in/luiz-davi-dos-santos-melo-a99988204/ " target="_blank"
+                title="Linkedin">
+                <img src="./assets/linkedin-logo.png" alt="linkedin-logo" class="social-items">
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- skills -->
+    <section class="skills-area" id="skills-area"><h2 id="skills" class="title-main">Habilidades</h2>
+        <div class="skills-icon">
+          <img class="list-item" src="./assets/html-logo.ico" alt="html-logo" title="HTML5" />
+          <img class="list-item" src="./assets/css-logo.ico" alt="css-logo" title="CSS3" />
+          <img class="list-item" src="./assets/javascript-logo.ico" alt="javascript-logo" title="JAVASCRIPT" />
+          <img class="list-item" src="./assets/react-logo.ico" alt="react-logo" title="REACT">
+          <img class="list-item" src="./assets/node-logo.ico" alt="node-logo" title="NODE">
+          <img class="list-item" src="./assets/git-logo.ico" alt="git-logo" title="GIT">
+        </div>
+        <div class="skill-bar">
+          <ul>
+            <li>
+              <b>HTML 5</b>
+              <div class="progress-bar">
+                <p>90%</p>
+              </div>
+            </li>
+            <li>
+              <b>CSS 3</b>
+              <div class="progress-bar">
+                <p>80%</p>
+              </div>
+            </li>
+            <li>
+              <b>UI / UX</b>
+              <div class="progress-bar">
+                <p>60%</p>
+              </div>
+            </li>
+            <li>
+              <b>JAVASCRIPT</b>
+              <div class="progress-bar">
+                <p>70%</p>
+              </div>
+            </li>
+            <li>
+              <b>REACT</b>
+              <div class="progress-bar">
+                <p>20%</p>
+              </div>
+            </li>
+            <li>
+              <b>NODE JS</b>
+              <div class="progress-bar">
+                <p>20%</p>
+              </div>
+            </li>
+            <li>
+              <b>GIT</b>
+              <div class="progress-bar">
+                <p>50%</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </section>
+
+    <!-- portfolio -->
+    <section class="projetos-area" id="project-area">
+        <h2 id="projetos" class="title-main">Projetos</h2>
+        <div class="all-projects display-flex">
+          <div class="project">
+          </div>
+        </div>
+    </section>
+
+    <!-- contact me -->
+    <section class="contact-area flex-column" id="contact-area">
+        <h2 id="contact-" class="title-main">Contato</h2>
+        <form action="" class="display-flex flex-column">
+
+        <label for="name-contact">Nome</label>
+        <input type="text" name="name-contact" id="name-contact" class="input-class" placeholder="Nome *" required />
+
+        <label for="email-contact">Nome</label>
+        <input type="text" name="email-contact" id="email-contact" class="input-class" placeholder="E-mail *" required />
+
+        <label for="message-contact">Nome</label>
+        <textarea name="message-contact" cols="30" rows="10" id="message-contact" class="input-class" placeholder="Digite sua mensagem aqui *" required></textarea>
+
+        <button class="cursor-pointer">Enviar</button>
+        </form>
+    </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <p>© 2021 Davi Melo - Desenvolvedor Front End</p>
+    </footer>
+  </div>
+  <script src="./app.js"></script>
+</body>
+
+</html>

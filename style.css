@@ -1,0 +1,576 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+:root {
+  --primarycolor: #1e374e;
+  --secondarycolor: #11c269;
+  --textcolor: #555555;
+  --background-body: #f1f0f0;
+  --background-section: #75757515;
+}
+
+/* CSS GLOBAL */
+
+.text-center {
+  text-align: center;
+}
+header,
+footer,
+.contact-area form button:hover,
+.skill-bar ul li > ::after,
+.home {
+  background: var(--primarycolor);
+}
+
+.skills-area,
+.contact-area,
+.projetos-area,
+.about-me {
+  padding: 4.5rem 1rem 4.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-me,
+.projetos-area {
+  background: var(--background-section);
+}
+
+.progress-bar p,
+.contact-area form button,
+#download-btn {
+  font-weight: 600;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.list-item,
+.social-items {
+  cursor: pointer;
+}
+
+.input-class,
+#download-btn {
+  font-size: 1rem;
+}
+
+.input-class,
+.project,
+#download-btn {
+  border-radius: 0.6rem;
+}
+
+.input-class,
+#download-btn {
+  padding: 0.5rem;
+}
+
+.displayOn,
+.home .top,
+.contact-area {
+  align-items: center;
+}
+
+.contact-area form button,
+.info-list a:hover {
+  color: var(--primarycolor);
+}
+
+.contact-area form button,
+.progress-bar {
+  border-radius: 2rem;
+}
+
+.progress-bar,
+header nav a,
+.home,
+.text-left {
+  position: relative;
+}
+
+header,
+header nav,
+header nav a:hover::after,
+.home .top,
+.input-class,
+.text-left,
+.text-left::after {
+  width: 100%;
+}
+
+header,
+.aboutme-text,
+.all-projects {
+  justify-content: center;
+}
+
+header nav a::after,
+.progress-bar p,
+.text-left::after,
+#contact-area label {
+  position: absolute;
+}
+
+.text-left p:first-of-type:first-letter,
+.contact-area form button {
+  font-size: 1.3rem;
+}
+
+.contact-area form button,
+.input-class:focus {
+  border: 2px solid var(--primarycolor);
+}
+/*-------------*/
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: var(--background-body);
+  color: var(--textcolor);
+}
+
+.container {
+  min-width: 100%;
+  max-width: 1300px;
+  height: 100%;
+}
+
+/* CSS HEADER */
+
+header {
+  position: fixed;
+  z-index: 999;
+}
+
+header nav {
+  max-width: 1200px;
+  justify-content: flex-end;
+}
+
+header nav a {
+  margin: 0.7rem;
+  padding: 0.5rem 0;
+  opacity: 0.9;
+  font-size: 1.2rem;
+}
+
+header nav a:hover {
+  opacity: 1;
+}
+
+header nav a::after {
+  content: "";
+  width: 0%;
+  background: rgb(0, 255, 128);
+  height: 3px;
+  bottom: 0;
+  display: block;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+header nav a:hover::after {
+  opacity: 1;
+}
+
+@keyframes show {
+  from {
+    margin-right: -200%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}
+
+@keyframes hidden {
+  from {
+    margin-right: 0%;
+  }
+  to {
+    margin-right: -200%;
+  }
+}
+
+.animation-show {
+  animation: show 0.5s;
+}
+
+.animation-hidden {
+  animation: hidden 0.5s;
+}
+
+/* CSS HOME */
+
+@keyframes move-down {
+  to {
+    opacity: 0.1;
+    transform: scale(0.95) translateY(20px);
+  }
+}
+
+.bottom a {
+  display: flex;
+  justify-content: center;
+}
+
+#arrow-down {
+  opacity: 0.8;
+  animation: move-down 1s ease infinite;
+  position: absolute;
+  bottom: 1rem;
+  height: 40px;
+}
+
+.home {
+  height: 90vh;
+}
+
+.home .top {
+  height: 100%;
+  justify-content: space-around;
+}
+
+#my-name,
+#download-btn,
+header nav a {
+  color: rgba(247, 247, 247, 0.979);
+}
+
+#my-name,
+.left-side p {
+  line-height: 100%;
+}
+
+#my-name {
+  font-size: 4.5rem;
+}
+
+#download-btn {
+  border: 2px solid var(--secondarycolor);
+  transition: 0.3s;
+  background: rgba(0, 0, 0, 0);
+}
+
+#download-btn:hover {
+  background: var(--secondarycolor);
+}
+
+.left-side p {
+  font-size: 2rem;
+  color: #f7f7f7de;
+}
+
+.left-side p:last-of-type {
+  text-indent: 0.5rem;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.text-left {
+  width: 300px;
+}
+
+.home .bottom {
+  align-self: center;
+}
+/* CSS ABOUT ME */
+
+.text-left p {
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-indent: 0.95rem;
+}
+
+.info-list {
+  list-style: none;
+}
+.info-list p {
+  margin: 10px 0 10px 0;
+  text-indent: 0.5rem;
+  font-weight: 500;
+}
+
+.info-list b {
+  letter-spacing: 0.05rem;
+}
+
+.title-main::after {
+  content: "";
+  width: 100px;
+  height: 5px;
+  background: #d9d9d9;
+  display: block;
+  margin: auto;
+}
+
+.info-list a {
+  color: var(--textcolor);
+  transition: 0.3s;
+}
+
+.social-items {
+  width: 30px;
+}
+
+/* CSS SKILLS */
+
+.skills-icon,
+.skill-bar {
+  align-self: center;
+  max-width: 100%;
+}
+
+.skill-bar li {
+  margin-top: 1.5rem;
+  list-style: none;
+}
+
+.progress-bar {
+  margin-bottom: 1.7rem;
+  height: 1.7rem;
+  background-color: rgb(177, 177, 177);
+  max-width: 100%;
+  width: 350px;
+}
+
+.progress-bar p {
+  font-size: 0.95rem;
+  bottom: 7%;
+  left: 20px;
+  color: #fff;
+  z-index: 1;
+}
+
+.skill-bar ul li > ::after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  border-radius: 2rem;
+}
+
+.skill-bar ul li:nth-child(1) .progress-bar::after {
+  width: 90%;
+}
+.skill-bar ul li:nth-child(2) .progress-bar::after {
+  width: 80%;
+}
+.skill-bar ul li:nth-child(3) .progress-bar::after {
+  width: 60%;
+}
+.skill-bar ul li:nth-child(4) .progress-bar::after {
+  width: 70%;
+}
+.skill-bar ul li:nth-child(5) .progress-bar::after {
+  width: 20%;
+}
+.skill-bar ul li:nth-child(6) .progress-bar::after {
+  width: 20%;
+}
+
+.skill-bar ul li:nth-child(7) .progress-bar::after {
+  width: 50%;
+}
+
+/* CSS PORTIFOLIO */
+
+.project {
+  width: 300px;
+  height: 300px;
+  background-color: orangered;
+  margin: 0.5rem;
+}
+
+/* CSS CONTACT ME*/
+
+.input-class {
+  margin-bottom: 0.6rem;
+  resize: none;
+  border: 2px solid rgba(0, 0, 0, 0);
+  transition: 0.3s;
+}
+
+.contact-area form button {
+  padding: 0.8rem 5rem;
+  align-self: center;
+  transition: 0.4s;
+}
+
+.contact-area form button:hover {
+  color: rgb(240, 255, 255);
+}
+
+/*----------------------*/
+
+.title-main {
+  text-align: center;
+  color: var(--secondarycolor);
+  margin-bottom: 1rem;
+}
+
+.list-item {
+  width: 70px;
+  margin-left: 0.5rem;
+}
+
+.list-item:hover {
+  transform: scale(1.1);
+}
+
+.text-right {
+  min-height: 230px;
+  margin-left: 1rem;
+  justify-content: space-between;
+}
+
+.text-left::after {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background-color: rgb(170, 170, 170);
+  display: block;
+  right: -0.5rem;
+  top: 0;
+}
+
+/* CSS FOOTER */
+
+footer {
+  padding: 2rem;
+  color: rgb(175, 175, 175);
+  text-align: center;
+}
+
+/*-------------*/
+
+#contact-area label {
+  opacity: 0;
+}
+
+@media screen and (max-width: 620px) {
+  header {
+    background: none;
+  }
+  header nav {
+    flex-direction: column;
+    background: rgb(37, 37, 37);
+  }
+
+  .text-left,
+  .text-right {
+    width: 100%;
+  }
+
+  .home .top,
+  .displayOn,
+  .aboutme-text,
+  .skill-container {
+    flex-direction: column;
+  }
+
+  .home .top {
+    padding: 1rem;
+  }
+
+  .displayOn {
+    justify-content: space-around;
+    height: 100vh;
+  }
+
+  .displayNone {
+    display: none;
+  }
+
+  .text-left::after {
+    width: 100%;
+    bottom: -1rem;
+    height: 2px;
+    top: auto;
+  }
+
+  .text-right {
+    min-height: 300px;
+    justify-content: space-between;
+    margin: 1.6rem 1rem 0 1rem;
+  }
+
+  #download-btn {
+    margin-top: 3rem;
+  }
+
+  /* CSS MOBILE MENU */
+  .mobile-menu,
+  .mobile-menu span {
+    position: absolute;
+  }
+
+  .mobile-menu {
+    right: 1rem;
+    top: 1rem;
+    display: flex;
+    margin-top: 4px;
+  }
+  #checkbox-mobile {
+    width: 30px;
+    height: 30px;
+    z-index: 999;
+    opacity: 0;
+  }
+  .mobile-menu span {
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px black;
+    transition: 0.4s;
+    border-radius: 5px;
+  }
+  .mobile-menu span:nth-child(1) {
+    top: 0px;
+  }
+  .mobile-menu span:nth-child(2) {
+    top: 10px;
+  }
+  .mobile-menu span:nth-child(3) {
+    top: 20px;
+  }
+
+  #checkbox-mobile:checked ~ span:nth-child(2) {
+    opacity: 0;
+  }
+  #checkbox-mobile:checked ~ span:nth-child(3) {
+    transform: rotate(45deg) translate(-10px, -5px);
+    box-shadow: none;
+  }
+  #checkbox-mobile:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(-10px, 3px);
+    box-shadow: none;
+  }
+}
