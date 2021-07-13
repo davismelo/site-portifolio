@@ -16,6 +16,7 @@
   --textcolor: #555555;
   --background-body: #f1f0f0;
   --background-section: #75757515;
+  --header-footer: rgb(45, 45, 45);
 }
 
 /* CSS GLOBAL */
@@ -24,11 +25,8 @@
   text-align: center;
 }
 header,
-footer,
-.contact-area form button:hover,
-.skill-bar ul li > ::after,
-.home {
-  background: var(--primarycolor);
+footer {
+  background: var(--header-footer);
 }
 
 .skills-area,
@@ -129,7 +127,6 @@ header,
 }
 
 header nav a::after,
-.progress-bar p,
 .text-left::after,
 #contact-area label {
   position: absolute;
@@ -140,7 +137,6 @@ header nav a::after,
   font-size: 1.3rem;
 }
 
-.contact-area form button,
 .input-class:focus {
   border: 2px solid var(--primarycolor);
 }
@@ -249,8 +245,29 @@ header nav a:hover::after {
   height: 40px;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .home {
   height: 90vh;
+  background: linear-gradient(
+    90deg,
+    rgb(28, 172, 104),
+    rgb(9, 149, 173),
+    rgb(66, 9, 173),
+    var(--primarycolor)
+  );
+  background-size: 300% 300%;
+  animation: gradient 15s ease infinite;
 }
 
 .home .top {
@@ -345,58 +362,39 @@ header nav a {
 .skills-icon,
 .skill-bar {
   align-self: center;
-  max-width: 100%;
 }
 
-.skill-bar li {
-  margin-top: 1.5rem;
+.skill-bar ul {
   list-style: none;
 }
 
+.skill-bar {
+  width: 100%;
+  max-width: 350px;
+}
+
 .progress-bar {
-  margin-bottom: 1.7rem;
-  height: 1.7rem;
   background-color: rgb(177, 177, 177);
-  max-width: 100%;
-  width: 350px;
+  margin-bottom: 1.7rem;
+  height: 1.6rem;
 }
 
-.progress-bar p {
-  font-size: 0.95rem;
-  bottom: 7%;
-  left: 20px;
+.progress-data p {
+  margin-left: 20px;
+}
+
+.progress-bar .progress-data {
   color: #fff;
-  z-index: 1;
-}
-
-.skill-bar ul li > ::after {
-  content: "";
-  height: 100%;
-  position: absolute;
+  background-color: #1e374e;
   border-radius: 2rem;
 }
 
-.skill-bar ul li:nth-child(1) .progress-bar::after {
-  width: 90%;
-}
-.skill-bar ul li:nth-child(2) .progress-bar::after {
-  width: 80%;
-}
-.skill-bar ul li:nth-child(3) .progress-bar::after {
-  width: 60%;
-}
-.skill-bar ul li:nth-child(4) .progress-bar::after {
-  width: 70%;
-}
-.skill-bar ul li:nth-child(5) .progress-bar::after {
-  width: 20%;
-}
-.skill-bar ul li:nth-child(6) .progress-bar::after {
-  width: 20%;
-}
-
-.skill-bar ul li:nth-child(7) .progress-bar::after {
-  width: 50%;
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+  100% {
+  }
 }
 
 /* CSS PORTIFOLIO */
@@ -418,12 +416,15 @@ header nav a {
 }
 
 .contact-area form button {
-  padding: 0.8rem 5rem;
-  align-self: center;
+  border: 2px solid #5d07a3;
+  padding: 0.8rem;
+  color: #5d07a3;
   transition: 0.4s;
 }
 
 .contact-area form button:hover {
+  background-color: #5d07a3;
+  border: 2px solid #5d07a3;
   color: rgb(240, 255, 255);
 }
 
@@ -530,7 +531,6 @@ footer {
   .mobile-menu span {
     position: absolute;
   }
-
   .mobile-menu {
     right: 1rem;
     top: 1rem;
@@ -573,4 +573,63 @@ footer {
     transform: rotate(-45deg) translate(-10px, 3px);
     box-shadow: none;
   }
+}
+
+.project {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slider ul {
+  list-style: none;
+}
+
+.slider .arrow-keys {
+  cursor: pointer;
+  transition: 0.4s;
+  opacity: 0.7;
+  position: absolute;
+}
+
+.slider img {
+  transition: 0.4s;
+  max-width: 100%;
+}
+
+.slider .arrow-keys:hover {
+  transform: scale(0.9);
+}
+
+.slider .arrow-keys:first-of-type {
+  left: 0;
+}
+
+.slider .arrow-keys:last-of-type {
+  right: 0;
+}
+
+#slider-points {
+  margin: auto;
+  display: flex;
+}
+
+#slider-points div {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background: #afaeae;
+  transition: 0.4s;
+}
+
+.color-point-on {
+  background-color: #5d07a3 !important;
 }
