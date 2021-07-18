@@ -24,69 +24,57 @@ btn_mobile.addEventListener("click", () => {
 
 // SLIDER DO PORTIFOLIO
 
-const arrow_left = document.querySelector("#arrow-left");
 const arrow_right = document.querySelector("#arrow-right");
+const arrow_left = document.querySelector("#arrow-left");
 const slider_images = document.querySelectorAll(".slider-images li");
 const slider_dot = document.querySelectorAll(".slider-points div");
 
-slider_dot[0].classList.add("color-point-on");
-var index_slide = 0;
+let slider_index = 0;
 
-for (let index = 0; index < slider_images.length; index++) {
-  let value = slider_images[index];
-  if (index !== 0) {
-    value.style.display = "none";
-  }
-}
-
-function Slide_Operations() {
-  function Hidden_Slides() {
-    slider_images.forEach((element) => {
-      element.style.display = "none";
-    });
-  }
-  function Show_Slides() {
-    slider_images[index_slide].style.display = "block";
-  }
-  Hidden_Slides();
-  Show_Slides();
-}
-
-function Add_Dot() {
-  slider_dot[index_slide].classList.add("color-point-on");
-}
-
-for (let index_slide = 0; index_slide < slider_dot.length; index_slide++) {
-  let element = slider_dot[index_slide];
-  element.addEventListener("click", () => {
-    slider_dot.forEach((element) => element.classList.remove("color-point-on"));
-    Add_Dot();
-
-    slider_images.forEach((element) => {
-      element.style.display = "none";
-    });
-    slider_images[index_slide].style.display = "block";
-    return (index_slide = index);
+function show(index) {
+  slider_images.forEach((data) => {
+    data.style.opacity = 0;
+    data.style.transform = "translateX(-15%)";
   });
-}
+  slider_dot.forEach((data) => {
+    data.style.background = "#afaeae";
+  });
 
-arrow_left.addEventListener("click", () => {
-  if (index_slide > 0) {
-    index_slide--;
-    Slide_Operations();
-    slider_dot[index_slide + 1].classList.remove("color-point-on");
-    Add_Dot();
-  }
-});
+  slider_images[index].style.opacity = 1;
+  slider_images[index].style.transform = "translateX(0%)";
+  slider_dot[index].style.background = "rgb(52, 174, 196)";
+  return (slider_index = index);
+}
 
 arrow_right.addEventListener("click", () => {
-  if (index_slide < slider_images.length - 1) {
-    index_slide++;
-    Slide_Operations();
-    slider_dot[index_slide - 1].classList.remove("color-point-on");
-    Add_Dot();
+  if (slider_index < slider_images.length - 1) {
+    slider_index++;
+    show(slider_index);
+    return;
+  }
+  if (slider_index === slider_images.length - 1) {
+    show(0);
+    return;
   }
 });
+
+arrow_left.addEventListener("click", () => {
+  if (slider_index > 0) {
+    slider_index--;
+    show(slider_index);
+    return;
+  }
+  if (slider_index === 0) {
+    show(slider_images.length - 1);
+    return;
+  }
+});
+
+for (let index = 0; index < slider_dot.length; index++) {
+  slider_dot[index].addEventListener("click", () => {
+    show(index);
+  });
+}
 //---------------------------------------------------
 
 // MUDAR COR DO HEADER
@@ -104,14 +92,28 @@ const Background_Header = () => {
 //-------------------------------------------------------
 
 // ANIMAÇÃO DE PREENCHIMENTO DA BARRA
-
 const progress_bar = document.querySelectorAll(" .progress-data");
-
 progress_bar.forEach((element) => {
-  let p = element;
   let value = element.textContent;
-  p.style.width = value;
+  element.style.animation = "progress 2s ease";
+  element.style.width = value;
 });
+
+//----------------------------------------------------------
+
+// EFEITO ESCREVER
+
+function Type_Write(el) {
+  const textArray = el.innerHTML.split("");
+  el.innerHTML = " ";
+  textArray.forEach(function (letter, i) {
+    setTimeout(function () {
+      el.innerHTML += letter;
+    }, 500 * i);
+  });
+}
+const MainText = document.querySelector("#home-right-side h1");
+Type_Write(MainText);
 
 window.addEventListener("scroll", () => {
   Background_Header();

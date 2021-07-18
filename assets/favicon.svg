@@ -1,12 +1,8 @@
-<svg width="49.99999999999999" height="49.99999999999999" xmlns="http://www.w3.org/2000/svg" stroke="null">
- <g stroke="null">
-  <title stroke="null">Layer 1</title>
-  <rect fill="#5B9BA2" stroke-width="0" stroke-dasharray="2,2" x="-14.19749" y="-15.93395" width="61.87501" height="106.41957" id="svg_6" stroke="#b2b2b2" transform="rotate(-37.9058 16.74 37.2758)"/>
-  <rect transform="rotate(-29.7701 46.9664 20.131)" stroke="#b2b2b2" fill="#8f26d6" stroke-width="0" stroke-dasharray="2,2" x="-15.36667" y="-22.17477" width="124.6661" height="84.61163" id="svg_7"/>
-  <text font-style="normal" font-weight="bold" fill="#ffffff" stroke-width="0" x="24.90166" y="33.59441" id="svg_8" font-size="24" font-family="'Poppins'" text-anchor="start" xml:space="preserve" stroke="#BBBBBB" transform="matrix(1.2444 0 0 1.5211 -7.0097 -15.8943)">M</text>
-  <text fill="#ffffff" x="13.05846" y="23.78975" id="svg_2" font-size="24" font-family="'Poppins'" text-anchor="start" xml:space="preserve" transform="rotate(0.22453 12.5732 24.2722) matrix(1.64093 0 0 2.00974 -23.1683 -6.62759)" font-weight="bold" font-style="normal" stroke-width="0" stroke-dasharray="2,2" stroke="#999999">D</text>
-  <path fill="#426373" d="m24.52019,14.88486c0.03122,0 0.06057,0.00603 0.08261,0.01696c0.0221,0.01094 0.03425,0.02551 0.03425,0.04101l0.04812,0c0,-0.04504 -0.07402,-0.08168 -0.165,-0.08168l0,0.02371l0.00001,0l0.00001,0zm0.00006,-0.04204c0.11128,0 0.2018,0.04488 0.2018,0.10003l0.0481,0c0,-0.06823 -0.11211,-0.12375 -0.24991,-0.12375l0,0.02372l0.00001,0zm0.06653,0.08346c0,0.00908 -0.01492,0.01644 -0.03332,0.01644s-0.03332,-0.00736 -0.03332,-0.01644c0,-0.00907 0.01492,-0.01643 0.03332,-0.01643s0.03332,0.00736 0.03332,0.01643z" id="svg_3" stroke="null"/>
-  <path fill="#426373" d="m26.01506,50.08336c0.01539,0 0.02986,0.00603 0.04073,0.01696c0.0109,0.01094 0.01689,0.02551 0.01689,0.04101l0.02373,0c0,-0.04504 -0.0365,-0.08168 -0.08135,-0.08168l0,0.02371l0.00001,0l-0.00001,0zm0.00003,-0.04204c0.05487,0 0.09949,0.04488 0.09949,0.10003l0.02372,0c0,-0.06823 -0.05527,-0.12375 -0.12321,-0.12375l0,0.02372l0.00001,0l-0.00001,0zm0.0328,0.08346c0,0.00908 -0.00736,0.01644 -0.01643,0.01644s-0.01643,-0.00736 -0.01643,-0.01644c0,-0.00907 0.00736,-0.01643 0.01643,-0.01643s0.01643,0.00736 0.01643,0.01643z" id="svg_4" stroke="null"/>
+<svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" stroke="null">
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <text stroke-width="0" font-style="normal" font-weight="normal" transform="matrix(0.840244 0 0 0.884708 0.111414 2.51334)" stroke="#2D6862" xml:space="preserve" text-anchor="start" font-family="'Poppins'" font-size="24" id="svg_9" y="31.88598" x="-2.88082" fill="#083734">&lt;    /&gt;</text>
+  <text transform="matrix(1.76892 0 0 1.95729 -24.8891 -20.6125)" stroke="#000000" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" id="svg_6" y="29.92896" x="16.41413" stroke-width="0" fill="#32d167">D</text>
  </g>
 
 </svg>
