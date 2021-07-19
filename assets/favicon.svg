@@ -1,8 +1,7 @@
-<svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" stroke="null">
- <g id="Layer_1">
-  <title>Layer 1</title>
-  <text stroke-width="0" font-style="normal" font-weight="normal" transform="matrix(0.840244 0 0 0.884708 0.111414 2.51334)" stroke="#2D6862" xml:space="preserve" text-anchor="start" font-family="'Poppins'" font-size="24" id="svg_9" y="31.88598" x="-2.88082" fill="#083734">&lt;    /&gt;</text>
-  <text transform="matrix(1.76892 0 0 1.95729 -24.8891 -20.6125)" stroke="#000000" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" id="svg_6" y="29.92896" x="16.41413" stroke-width="0" fill="#32d167">D</text>
+<svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" stroke="null" style="vector-effect: non-scaling-stroke;">
+ <g stroke="null" id="Layer_1">
+  <title stroke="null">Layer 1</title>
+  <text stroke="#000000" fill="#32d167" stroke-width="0" x="16.27315" y="30.93362" id="svg_6" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve" transform="matrix(2.36461 0 0 2.57965 -34.5466 -35.5709)">D</text>
  </g>
 
 </svg>

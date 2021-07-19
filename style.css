@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -5,7 +7,7 @@
   list-style: none;
   outline: none;
   text-decoration: none;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 html {
@@ -13,37 +15,25 @@ html {
 }
 
 :root {
-  --container-home-background: linear-gradient(
-    90deg,
-    rgb(35, 146, 94),
-    rgb(29, 126, 143),
-    rgb(66, 9, 173),
-    #1e374e
-  );
+  --home-background: linear-gradient(to bottom, #ace2e4, transparent);
+  --backgroundColor: #eeeeee;
+  --secondaryColor: #20212c;
+  --titleMain: #e44f45;
+  --textColor: #24201b;
 }
 
 body {
-  background-color: #0b1014f5;
-  color: #ffffffee;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
 }
-/* CSS ANIMATIONS */
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+/* CSS ANIMATIONS */
 
 @keyframes blink {
   from {
-    opacity: 0.5;
+    opacity: 0.7;
   }
+
   to {
     opacity: 0;
   }
@@ -53,6 +43,7 @@ body {
   from {
     width: 0%;
   }
+
   to {
     width: "";
   }
@@ -63,10 +54,12 @@ body {
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
 }
+
 /* CSS HEADER */
 
 header {
@@ -75,7 +68,8 @@ header {
   display: flex;
   position: fixed;
   justify-content: center;
-  padding: 1rem 1rem 1rem 0;
+  padding: 0.8rem 0.8rem 0.8rem 0;
+  transition: 0.6s;
 }
 
 header nav {
@@ -86,10 +80,10 @@ header nav {
 }
 
 header nav a {
-  color: #f0ffff;
+  color: var(--textColor);
   position: relative;
   margin-left: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
 }
 
 header nav a::after {
@@ -99,12 +93,17 @@ header nav a::after {
   opacity: 0;
   transition: 0.4s;
   height: 3px;
-  background-color: rgb(11, 219, 247);
+  background-color: var(--textColor);
 }
 
 header nav a:hover::after {
   opacity: 1;
   width: 100%;
+}
+
+.header-down {
+  background-color: var(--backgroundColor);
+  box-shadow: 0 0 5px #0000005c;
 }
 
 /* CSS MAIN */
@@ -116,12 +115,11 @@ main {
 }
 
 .title-main {
-  color: #ff0740;
+  color: var(--titleMain);
   margin: auto;
   width: max-content;
-  position: relative;
   margin-bottom: 2rem;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 2.2rem;
 }
 
@@ -129,8 +127,8 @@ main {
   content: "";
   width: 65%;
   height: 5px;
+  display: block;
   background-color: rgba(195, 195, 196, 0.603);
-  position: absolute;
   bottom: 0;
   margin: -4px auto;
   z-index: -1;
@@ -151,11 +149,9 @@ main {
 .container-home {
   display: flex;
   flex-direction: column;
-  height: 95vh;
+  height: 99vh;
   width: 100%;
-  background: var(--container-home-background);
-  background-size: 300% 300%;
-  animation: gradient 15s ease infinite;
+  background: var(--home-background);
 }
 
 .container-home #top {
@@ -170,9 +166,12 @@ main {
   animation: blink 1s ease-in-out alternate infinite;
 }
 
+.container-home #bottom img {
+  width: 30px;
+}
+
 #home-right-side p,
 h1 {
-  color: rgb(238, 238, 238);
   line-height: 100%;
 }
 
@@ -198,8 +197,8 @@ h1 {
 }
 
 #home-left-side #download-btn {
-  border: 2px solid white;
-  color: white;
+  border: 2px solid rgba(24, 22, 22, 0.884);
+  color: var(--textColor);
   padding: 0.7rem;
   border-radius: 1rem;
   font-size: 1.1rem;
@@ -207,8 +206,9 @@ h1 {
 }
 
 #home-left-side #download-btn:hover {
-  border: 2px solid #11c269;
-  background-color: #11c269;
+  color: rgb(255, 255, 255);
+  border: 2px solid #01293067;
+  background-color: #01293067;
 }
 
 /* CSS ABOUT-ME */
@@ -254,17 +254,21 @@ h1 {
 }
 
 .info-list li b {
-  color: rgba(124, 253, 174, 0.877);
-  letter-spacing: 1px;
+  color: var(--secondaryColor);
+  font-size: 1.2rem;
 }
 
 .info-list a {
-  color: #f3f3f3;
+  color: var(--textColor);
+  transition: 0.3s;
+}
+
+.info-list a:hover {
+  color: rgb(53, 105, 184);
   text-decoration: underline;
 }
 
 .social-list a img {
-  width: 2rem;
   transition: 0.3s;
 }
 
@@ -279,13 +283,14 @@ h1 {
 
 .skills-icon img {
   width: 70px;
+  transition: 0.35s;
   cursor: pointer;
   margin-left: 1rem;
   margin-bottom: 0.5rem;
 }
 
 .skills-icon img:hover {
-  transform: scale(1.1);
+  transform: translateY(-10px);
 }
 
 .skill-bar ul li {
@@ -302,25 +307,28 @@ h1 {
 .progress-bar {
   margin-top: 0.25rem;
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
   height: 1.5rem;
   background: #acacac;
-  border-radius: 1rem;
+  border-radius: 0.35rem;
 }
 
 .progress-data {
   height: 100%;
   width: 0;
   display: flex;
-  background: rgb(29, 126, 143);
-  border-radius: 1rem;
+  background: var(--secondaryColor);
   align-items: center;
+  border-radius: 0.35rem;
 }
 
 .progress-data p {
+  color: #fff;
   font-weight: 600;
-  margin-left: 25px;
+  font-size: 1.1rem;
+  margin-left: 18px;
 }
+
 /* CSS PORTIFOLIO*/
 
 .slider {
@@ -358,11 +366,13 @@ h1 {
   bottom: 0;
   z-index: 1;
   transition: 0.4s;
+  opacity: 0.5;
   cursor: pointer;
 }
 
 .arrow-keys:hover {
   transform: scale(0.9);
+  opacity: 0.65;
 }
 
 #arrow-right {
@@ -380,12 +390,12 @@ h1 {
   height: 20px;
   margin-left: 5px;
   border-radius: 50%;
-  background: #afaeae;
+  background: #acacac;
   transition: 0.4s;
 }
 
 .slider-points div:first-of-type {
-  background: rgb(52, 174, 196);
+  background: var(--secondaryColor);
 }
 
 /* CSS CONTACT-ME */
@@ -402,33 +412,29 @@ h1 {
 
 .input-class {
   margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 0.5rem;
   border-radius: 0.45rem;
-  border: 2px solid rgba(0, 0, 0, 0);
-  background: rgba(255, 255, 255, 0.11);
+  border: 2px solid rgba(139, 139, 139, 0.651);
+  background: #ffffff21;
   transition: 0.5s;
-  color: #c9c9c9;
   resize: none;
 }
 
-.input-class::placeholder {
-  color: #c9c9c988;
-}
-
 .input-class:focus {
-  border: 2px solid rgb(29, 126, 143);
+  border: 2px solid var(--secondaryColor);
+  box-shadow: 0px 0px 5px var(--secondaryColor);
 }
 
 .container-contact form button {
   background: none;
   border: none;
-  color: rgb(52, 174, 196);
+  color: var(--secondaryColor);
   font-size: 1.5rem;
   padding: 0.8rem;
   cursor: pointer;
-  border: 2px solid rgb(29, 126, 143);
-  border-radius: 2rem;
+  border: 2px solid var(--secondaryColor);
+  border-radius: 0.6rem;
   width: 70%;
   align-self: center;
   transition: 0.5s;
@@ -436,8 +442,8 @@ h1 {
 }
 
 .container-contact form button:hover {
-  color: #f3f3f3;
-  background-color: rgb(29, 126, 143);
+  color: var(--backgroundColor);
+  background-color: var(--secondaryColor);
 }
 
 /* CSS FOOTER */
@@ -445,9 +451,10 @@ h1 {
 footer {
   padding: 4rem 0 2rem 0;
   text-align: center;
+  opacity: 0.9;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 680px) {
   /* CSS MENU MOBILE */
 
   header {
@@ -460,9 +467,13 @@ footer {
     align-items: center;
     height: 100vh;
     justify-content: space-around;
-    background: #14191d;
+    background: var(--home-background);
     transform: translate(100%, 0);
     transition: transform 0.5s ease;
+  }
+
+  header nav a {
+    margin: 0;
   }
 
   header nav.nav-active {
@@ -499,6 +510,7 @@ footer {
     width: 100%;
     background-color: white;
   }
+
   .mobile-menu > span:nth-child(3) {
     position: absolute;
     top: 20px;
@@ -514,11 +526,15 @@ footer {
   .transform span:nth-child(2) {
     opacity: 0;
   }
+
   .transform span:nth-child(3) {
     transform: rotate(45deg) translate(-10px, -4px);
   }
 
   /* CSS HOME MOBILE*/
+  .container-home {
+    height: 90vh;
+  }
 
   .container-home #top {
     flex-direction: column;
@@ -528,6 +544,7 @@ footer {
   #aboutme-text {
     flex-direction: column;
   }
+
   #text-left::after {
     width: 100%;
     height: 4px;
@@ -544,6 +561,7 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+
   .input-class {
     width: 80vw;
   }

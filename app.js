@@ -42,7 +42,7 @@ function show(index) {
 
   slider_images[index].style.opacity = 1;
   slider_images[index].style.transform = "translateX(0%)";
-  slider_dot[index].style.background = "rgb(52, 174, 196)";
+  slider_dot[index].style.background = "var(--secondaryColor)";
   return (slider_index = index);
 }
 
@@ -83,9 +83,9 @@ const home = document.querySelector("#home");
 
 const Background_Header = () => {
   if (window.scrollY >= home.offsetHeight - 20 && screen.width > 650) {
-    header.style.background = "#14191D";
+    header.classList.add("header-down");
   } else {
-    header.style.background = "";
+    header.classList.remove("header-down");
   }
 };
 
@@ -103,16 +103,18 @@ progress_bar.forEach((element) => {
 
 // EFEITO ESCREVER
 
+const MainText = document.querySelector("#home-right-side h1");
+
 function Type_Write(el) {
-  const textArray = el.innerHTML.split("");
-  el.innerHTML = " ";
+  const textArray = el.innerText.split("");
+  el.innerHTML = "";
   textArray.forEach(function (letter, i) {
     setTimeout(function () {
       el.innerHTML += letter;
-    }, 500 * i);
+    }, 550 * i);
   });
 }
-const MainText = document.querySelector("#home-right-side h1");
+
 Type_Write(MainText);
 
 window.addEventListener("scroll", () => {
