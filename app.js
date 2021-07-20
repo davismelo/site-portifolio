@@ -1,9 +1,8 @@
+// MENU MOBILE
+
 const all_Items = document.querySelectorAll(".nav-item");
 const btn_mobile = document.querySelector(".mobile-menu");
 const nav_bar = document.querySelector("nav");
-const nav_text = document.querySelectorAll("header nav a");
-
-// MENU MOBILE
 
 const Close_Menu = () => {
   nav_bar.classList.toggle("nav-active");
@@ -93,11 +92,14 @@ const Background_Header = () => {
 
 // ANIMAÇÃO DE PREENCHIMENTO DA BARRA
 const progress_bar = document.querySelectorAll(" .progress-data");
-progress_bar.forEach((element) => {
-  let value = element.textContent;
-  element.style.animation = "progress 2s ease";
-  element.style.width = value;
-});
+
+function Loading_Bar() {
+  progress_bar.forEach((element) => {
+    let value = element.textContent;
+    element.style.animation = "progress 2s ease";
+    element.style.width = value;
+  });
+}
 
 //----------------------------------------------------------
 
@@ -117,6 +119,49 @@ function Type_Write(el) {
 
 Type_Write(MainText);
 
-window.addEventListener("scroll", () => {
+//-------------------------------------------------------------
+
+// EFEITO FADE IN
+const sections = document.querySelectorAll(".section");
+const SectionsArray = Array.from(sections);
+
+function Fade_Effect() {
+  SectionsArray.forEach((element) => {
+    const Height = element.offsetTop;
+
+    if (scrollY >= Height - 450) {
+      element.style.opacity = 1;
+      Loading_Bar();
+    } else {
+      element.style.opacity = 0;
+    }
+  });
+}
+
+//--------------------------------------------------------------
+
+// EFEITO SCROLL SUAVE
+
+const nav_text = document.querySelectorAll("header nav a");
+
+nav_text.forEach((element) => {
+  element.addEventListener("click", Smooth_Scroll);
+});
+
+function Smooth_Scroll(e) {
+  e.preventDefault();
+  const link = event.target;
+  const location = link.getAttribute("href");
+  const move = document.querySelector(location).offsetTop;
+  window.scroll({
+    top: move - 60,
+    behavior: "smooth",
+  });
+}
+
+//--------------------------------------------------------------
+
+document.addEventListener("scroll", () => {
   Background_Header();
+  Fade_Effect();
 });
